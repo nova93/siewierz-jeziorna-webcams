@@ -14,13 +14,37 @@
 			height: 100%;
 			margin: 0px;
 			object-fit: cover;
+			cursor: pointer;
 		}
 	</style>
 </head>
-<body>
-	<img style="-webkit-user-select: none;" src="http://kamera.siewierzjeziorna.pl:8081/GetData.cgi?CH=2">
-	<img style="-webkit-user-select: none;" src="http://kamera.siewierzjeziorna.pl:8082/GetData.cgi?CH=2">
-	<img style="-webkit-user-select: none;" src="http://kamera.siewierzjeziorna.pl:8084/GetData.cgi?CH=2">
-	<img style="-webkit-user-select: none;" src="http://kamera.siewierzjeziorna.pl:8085/GetData.cgi?CH=2">
+<body id="body">
+	<img src="http://kamera.siewierzjeziorna.pl:8081/GetData.cgi?CH=2" onclick="openLarge(this);">
+	<img src="http://kamera.siewierzjeziorna.pl:8082/GetData.cgi?CH=2" onclick="openLarge(this);">
+	<img src="http://kamera.siewierzjeziorna.pl:8084/GetData.cgi?CH=2" onclick="openLarge(this);">
+	<img src="http://kamera.siewierzjeziorna.pl:8085/GetData.cgi?CH=2" onclick="openLarge(this);">
+	<script type="text/javascript">
+		sheet = document.styleSheets[0];
+		rules = sheet.cssRules || sheet.rules;
+
+		function openLarge(e) {
+			if (rules[0].style.display == "grid") {
+				rules[0].style.display = "block";
+				rules[1].style.display = "none";
+				rules[1].style.width = "100vw";
+				rules[1].style.height = "100vh";
+				e.style.display = "block";
+
+			} else {
+				rules[0].style.display = "grid";
+				rules[1].style.display = "block";
+				rules[1].style.width = "100%";
+				rules[1].style.height = "100%";
+				e.style.display = "";
+			}
+
+
+		}
+	</script>
 </body>
 </html>
