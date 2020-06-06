@@ -1,0 +1,4 @@
+/*
+    X-Frame-Options: DENY
+    Content-Security-Policy: frame-ancestors 'none'; default-src 'self'; img-src 'self' http://kamera.siewierzjeziorna.pl:8081 http://kamera.siewierzjeziorna.pl:8082 http://kamera.siewierzjeziorna.pl:8084 http://kamera.siewierzjeziorna.pl:8085;
+    X-Content-Type-Options: nosniff
